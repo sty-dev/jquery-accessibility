@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <title>jQuery Accessibility Demo</title>
+  <meta property="og:site_name" content="jQuery Accessibility Demo" />
+  <meta property="og:title" content="jQuery Accessibility Demo" />
+
+  <meta name="description" content="">
+  <meta property="og:description" content="" />
+
+  <meta name="keywords" content="">
+  <meta property="og:type" content="website" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="ja_JP" />
+  <meta property="og:url" content="/demo/index.html" />
+
+  <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset200802.css">
+  <link rel="stylesheet" href="/demo/css/style.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/jquery.accessibility.min.js"></script>
+  <script src="/demo/js/init.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <header role="banner">
+      <h1>jQuery Accessibility Demo</h1>
+      <nav class="jq_a11y--root" role="navigation">
+        <ul>
+          <li><a class="jq_a11y--expand" aria-controls="menu1-1" href="#">Menu 1</a>
+            <ul class="dropdown-list" id="menu1-1">
+              <li><a class="jq_a11y--expand" aria-controls="menu1-1-1" href="#">Menu 1-1</a>
+                <ul class="dropdown-list" id="menu1-1-1">
+                  <li><a href="#">Menu 1-1-1</a></li>
+                  <li><a href="#">Menu 1-1-2</a></li>
+                  <li><a href="#">Menu 1-1-3</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Menu 1-2</a></li>
+              <li><a href="#">Menu 1-3</a></li>
+              <li><a href="#">Menu 1-4</a></li>
+              <li><a class="jq_a11y--expand" aria-controls="menu1-5-1" href="#">Menu 1-5</a>
+                <ul class="dropdown-list" id="menu1-5-1">
+                  <li><a href="#">Menu 1-5-1</a></li>
+                  <li><a href="#">Menu 1-5-2</a></li>
+                  <li><a href="#">Menu 1-5-3</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Menu 1-6</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Menu 2</a></li>
+          <li><a href="#">Menu 3</a></li>
+          <li><a href="#">Menu 4</a></li>
+          <li><a href="#">Menu 5</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main role="main">
+
+    </main>
+
+    <footer role="contentinfo">
+
+    </footer>
+  </div>
+
+</body>
+</html>
