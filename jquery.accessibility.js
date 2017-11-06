@@ -1,3 +1,6 @@
+// Stylement Inc.
+// Takayuki Arai
+// http://www.stylement.co.jp
 (function($, document, window){
 
   var
