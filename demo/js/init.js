@@ -1,6 +1,6 @@
 jQuery(function($){
 
-  $('.jq_a11y--root').a11y();
+  $.a11y();
 
   $('.jq_a11y--expand').parent().on({
     mouseenter: function () {

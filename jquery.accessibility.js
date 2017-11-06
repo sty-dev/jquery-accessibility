@@ -2,10 +2,16 @@
 // Takayuki Arai
 // http://www.stylement.co.jp
 (function($, document, window){
+  var
+  _style = document.createElement('style');
+  document.head.appendChild(_style);
+  _style.classList.add('a11y-add-style-visually-hidden');
+  _style.textContent = '.visually-hidden{display:block;position:absolute;height:1px;width:1px;overflow:hidden;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);}';
 
   var
   // Default settings object.
   _defaults = {
+    visuallyHidden: true,
     expandElement: '.jq_a11y--expand'
   },
   // public methods object.
@@ -15,20 +21,39 @@
   // public methods function
   // initialize
   _methods.init = function( options_ ) {
-    var _settings = $.extend({}, _defaults, options_);
+    var
+    _settings = $.extend({}, _defaults, options_);
     _methods.settings = _settings;
-    return this.each( function( i_, el_ ) {
-      var
-      $this = $(el_),
-      $element = $(_methods.settings.expandElement, $this),
-      tgt;
 
-      $element.each( function( i_i_, el_el_ ) {
-        tgt = $(el_el_).attr('aria-controls');
-        $(el_el_).attr('aria-expanded', 'false');
+    if ( _methods.settings.visuallyHidden == false ) {
+      $('.a11y-add-style-visually-hidden').remove();
+    }
+
+    var
+    tgt,
+    fxs = function( expand_ ) {
+      expand_.each( function( i_, el_ ) {
+        tgt = '';
+        tgt = $(el_).attr('aria-controls');
+        $(el_).attr('aria-expanded', 'false');
         $('#' + tgt).attr('aria-hidden', 'false');
       });
-    });
+    };
+    if ( this.isFunction ) {
+      var
+      $expand = $(_methods.settings.expandElement);
+
+      fxs($expand);
+    }
+    else {
+      return this.each( function( i_, el_ ) {
+        var
+        $this = $(el_),
+        $expand = $(_methods.settings.expandElement, $this);
+
+        fxs($expand);
+      });
+    }
   }
 
   // expand event
