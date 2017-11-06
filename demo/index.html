@@ -16,7 +16,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:locale:alternate" content="ja_JP" />
-  <meta property="og:url" content="/demo/index.html" />
+  <meta property="og:url" content="" />
 
   <link rel="stylesheet" href="//meyerweb.com/eric/tools/css/reset/reset200802.css">
   <link rel="stylesheet" href="./css/style.min.css">
@@ -24,13 +24,27 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="../jquery.accessibility.min.js"></script>
   <script src="./js/init.js"></script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KX848L2');</script>
+  <!-- End Google Tag Manager -->
 </head>
 
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX848L2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
   <div class="container">
     <header role="banner">
       <h1>jQuery Accessibility Demo</h1>
       <nav class="jq_a11y--root" role="navigation">
+        <h2 class="visually-hidden">Global Navigation</h2>
         <ul>
           <li><a class="jq_a11y--expand" aria-controls="menu1-1" href="#">Menu 1</a>
             <ul class="dropdown-list" id="menu1-1">
